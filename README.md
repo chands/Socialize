@@ -42,15 +42,15 @@ use socializedb;
 1. **create posts**
    this will create a new post, required fields are
 
-   - username (the author of that post)
-   - title (the title of the post)
-   - body
+    - username (the author of that post)
+    - title (the title of the post)
+    - body
 
 2. **show all posts**
    list all existing posts, we should have following filtering support
 
-   - filter by username
-   - filter by query contained in title (search by title)
+    - filter by username
+    - filter by query contained in title (search by title)
 
 3. **edit posts** `TBD`
 
@@ -63,6 +63,8 @@ use socializedb;
 2. **show all comments (under a post)**
 
 3. **show all comments (of a user)**
+
+Access database through controllers not routes & controllers through routes!
 
 ```shell
 git init

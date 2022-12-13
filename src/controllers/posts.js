@@ -1,4 +1,4 @@
-const { Posts, Users } = require("../db/models");
+const { Posts, Users } = require('../db/models');
 
 /**
  * Create new post by a user with the given userId
@@ -7,13 +7,13 @@ const { Posts, Users } = require("../db/models");
  * @param {Text} body
  */
 async function createNewPost(userId, title, body) {
-  const post = await Posts.create({
-    title,
-    body,
-    userId,
-  });
+	const post = await Posts.create({
+		title,
+		body,
+		userId
+	});
 
-  return post;
+	return post;
 }
 
 /**
@@ -23,19 +23,19 @@ async function createNewPost(userId, title, body) {
  *
  */
 async function showAllPosts(query) {
-  const posts = await Posts.findAll({
-    // where: {
-    //    ...query // ...query ToDo: handle query params
-    // }
-    include: [Users], // ...include works only when relations exists between models
-  });
-  return posts;
+	const posts = await Posts.findAll({
+		// where: {
+		//    ...query // ...query ToDo: handle query params
+		// }
+		include: [Users] // ...include works only when relations exists between models
+	});
+	return posts;
 }
 
 module.exports = {
-    createNewPost,
-    showAllPosts
-}
+	createNewPost,
+	showAllPosts
+};
 
 /* Test post */
 /*
