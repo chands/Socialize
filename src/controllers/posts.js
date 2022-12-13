@@ -18,11 +18,11 @@ async function createNewPost(userId, title, body) {
 
 /**
  * Show all posts:
- * showAllPosts({username: ''})
- * showAllPosts({title: ''})
+ * getAllPosts({username: ''})
+ * getAllPosts({title: ''})
  *
  */
-async function showAllPosts(query) {
+async function getAllPosts(query) {
 	const posts = await Posts.findAll({
 		// where: {
 		//    ...query // ...query ToDo: handle query params
@@ -34,7 +34,7 @@ async function showAllPosts(query) {
 
 module.exports = {
 	createNewPost,
-	showAllPosts
+	getAllPosts
 };
 
 /* Test post */
@@ -59,7 +59,7 @@ async function test() {
 
   //fetch posts
 
-  const posts = await showAllPosts();
+  const posts = await getAllPosts();
   for (let p of posts) {
     console.log(`
         title: ${p.title}
