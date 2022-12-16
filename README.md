@@ -20,6 +20,8 @@ use socializedb;
 
 ## Project Structure
 
+### `Backend (Server Side Code)`
+
 ```shell
 ./src
 ├───controllers       # functions to connect routes to db operations
@@ -28,6 +30,17 @@ use socializedb;
 ├───routes            # express middlewares (route wise)
 └───utils             # Generate Random username
 
+```
+
+### `Frontend (Client Side Code)`
+
+```shell
+src/public
+├───app              # our own common frontend js and CSS code 
+├───components       # our own html snippets
+├───css              # CSS library used
+├───js               # JavaScript libraries used
+└───index.html       # First / Home page
 ```
 
 ## Business logic
@@ -64,7 +77,34 @@ use socializedb;
 
 3. **show all comments (of a user)**
 
-Access database through controllers not routes & controllers through routes!
+**NOTE: Access database through controllers not routes & controllers through routes!**
+
+## API Documentation
+
+### `users`
+
+1. `POST /users`
+-- Creates a new user with random username and user id
+
+2. `GET /users/{userid}`
+-- Get a user with a given user id
+3. `GET /users/{username}`
+-- Get a user with a given username
+
+### `Posts`
+
+1. `GET /posts`
+-- Get all posts by everyone
+
+2. `POST /posts`
+-- Create a new post.
+required fields in body are:
+```
+userId=
+title=
+body=
+```
+
 
 ```shell
 git init
