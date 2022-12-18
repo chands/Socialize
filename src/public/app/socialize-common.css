@@ -1,0 +1,23 @@
+#navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.searchBar {
+    width: 40%;
+}
+
+#content {
+    height: 2000px; /*temp*/
+}
+
+#footer {
+    background-color: var(--bs-gray-200);
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

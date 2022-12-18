@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Socialize</title>
+		<!-- 3rd party libraries -->
 		<link rel="stylesheet" href="./css/bootstrap.css" />
 		<script defer src="./js/bootstrap.bundle.js"></script>
 		<script defer src="./js/jquery-3.6.2.js"></script>
@@ -13,10 +14,16 @@
 			href="
 			https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		/>
+		<!-- Our App logic and styles -->
+		<link rel="stylesheet" href="./app/socialize-common.css" />
 		<script defer src="./app/socialize-common.js"></script>
 	</head>
 
 	<body>
-		<div id="navbar"></div>
+		<div id="navbar" class=""></div>
+		<div id="content" class="container">
+			<div id="loggedInUser" class="mx-2"></div>
+		</div>
+		<div id="footer" class=""></div>
 	</body>
 </html>
