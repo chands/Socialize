@@ -1,4 +1,5 @@
 #navbar {
+    background-color: #cfe2ff;
     position: sticky;
     top: 0;
     left: 0;
@@ -11,12 +12,15 @@
 }
 
 #content {
-    height: 2000px; /*temp*/
+    
+}
+#posts-container a {
+    text-decoration: none;
 }
 
 #footer {
     background-color: var(--bs-gray-200);
-    position: sticky;
+    /* position: sticky; */
     bottom: 0;
     left: 0;
     right: 0;
