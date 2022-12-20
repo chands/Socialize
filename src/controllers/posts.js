@@ -24,9 +24,9 @@ async function createNewPost(userId, title, body) {
  */
 async function getAllPosts(query) {
 	const posts = await Posts.findAll({
-		// where: {
-		//    ...query // ...query ToDo: handle query params
-		// }
+		where: {
+			...query // ...query: handle query params
+		},
 		include: [Users] // ...include works only when relations exists between models
 	});
 	return posts;

@@ -1,0 +1,41 @@
+<h1 class="text-center pt-2">Write Post</h1>
+<!-- Write Post Form -->
+<div class="row">
+	<div class="col"></div>
+	<form class="col-8 p-5 mx-5">
+		<div class="mb-3">
+			<label for="title" class="form-label">Post Title</label>
+			<input
+				type="text"
+				class="form-control"
+				id="title"
+				aria-describedby="titleHelp"
+			/>
+			<div id="titleHelp" class="form-text">
+				This title describes your post(max. 50 characters).
+			</div>
+		</div>
+		<div class="mb-3">
+			<label for="postBody" class="form-label">Post Body</label>
+			<textarea
+				class="form-control"
+				id="postBody"
+				cols="30"
+				rows="10"
+			></textarea>
+		</div>
+		<div class="mb-3 form-check">
+			<input
+				type="checkbox"
+				class="form-check-input"
+				id="checkMe"
+			/>
+			<label class="form-check-label" for="checkMe">
+				Check me out
+			</label>
+		</div>
+		<button type="button" id="writePost" class="btn btn-primary">Post on the Timeline</button>
+	</form>
+	<div class="col"></div>
+</div>
+<script src="../app/write-post.js"></script>

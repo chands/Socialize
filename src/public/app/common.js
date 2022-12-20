@@ -12,8 +12,8 @@ $(document).ready(() => {
 			// Alternative: load a html file with above html content here.
 		});
 	});
-	$('#footer').load('../components/footer.html');
 	$('#content').load('../components/all-posts.html'); // this contains it's own scripts too.
+	$('#footer').load('../components/footer.html');
 });
 
 function loginIfNeeded() {
@@ -30,14 +30,4 @@ function loginIfNeeded() {
 		console.log('logged in as ', currentUser.name);
 	}
 	return currentUser;
-}
-
-function writePost() {
-	$.post('/api/posts', {
-        title: $('#title').val(),
-        body: $('#post-body').val(),
-        user: {
-            name: $('#user-name').val(),
-        },
-    });
 }
