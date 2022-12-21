@@ -1,22 +1,20 @@
 const { Router } = require('express');
 const { createNewPost, getAllPosts } = require('../../controllers/posts');
-const { Users } = require('../../db/models');
 
 const route = Router();
 
 route.get('/', async (req, res) => {
-	const posts = await getAllPosts();
+	const userId = req.query.userId;
+	const posts = await getAllPosts(userId ? { userId } : {});
 	res.status(200).send(posts);
 });
 
 // Filter posts for current user
-route.get('/', async (req, res) => {
-	const query = {
-		userId: Users.id
-	};
-	const currentUserPosts = await getAllPosts(query);
-	res.status(200).send(currentUserPosts);
-});
+// route.get('/:userId', async (req, res) => {
+// 	const userId = req.params.userId;
+// 	const posts = await getAllPosts({ userId });
+// 	res.status(200).send(posts);
+// });
 
 route.post('/', async (req, res) => {
 	const { userId, title, body } = req.body;
