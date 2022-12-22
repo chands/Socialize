@@ -1,5 +1,9 @@
 const { Router } = require('express');
-const { createNewPost, getAllPosts } = require('../../controllers/posts');
+const {
+	createNewPost,
+	getAllPosts,
+	getPostById
+} = require('../../controllers/posts');
 
 const route = Router();
 
@@ -7,6 +11,13 @@ route.get('/', async (req, res) => {
 	const userId = req.query.userId;
 	const posts = await getAllPosts(userId ? { userId } : {});
 	res.status(200).send(posts);
+});
+
+// Filter posts using PostId:
+route.get('/:postId', async (req, res) => {
+	const postId = req.params.postId;
+	const post = await getPostById({ postId });
+	res.status(200).send(post);
 });
 
 // Filter posts for current user

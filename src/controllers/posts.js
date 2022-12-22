@@ -32,9 +32,20 @@ async function getAllPosts(query) {
 	return posts;
 }
 
+//get post by id
+async function getPostById(id) {
+	const post = await Posts.findOne({
+		where: {
+			id: id
+		}
+	});
+
+	return post;
+}
 module.exports = {
 	createNewPost,
-	getAllPosts
+	getAllPosts,
+	getPostById
 };
 
 /* Test post */

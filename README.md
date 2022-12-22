@@ -36,7 +36,7 @@ use socializedb;
 
 ```shell
 src/public
-├───app              # our own common frontend js and CSS code 
+├───app              # our own common frontend js and CSS code
 ├───components       # our own html snippets
 ├───css              # CSS library used
 ├───js               # JavaScript libraries used
@@ -60,16 +60,30 @@ src/public
     - body
 
 2. **show all posts**
-   list all existing posts, we should have following filtering support
+   list all existing posts, we should have following filtering support\*
 
     - filter by username
     - filter by query contained in title (search by title)
 
-3. **edit posts** `TBD`
+3. **show current user's posts**
+   list all existing posts created by current user,
+   we should have following filtering support\*
 
-4. **delete posts** `TBD`
+    - filter by username
+    - filter by query contained in title (search by title)
 
-### Comments
+4. **show post by postId**
+   Expand post by postId in full page upon clicking on ...see more,
+   we should have following filtering support\*
+
+    - filter by username
+    - filter by query contained in title (search by title)
+
+5. **edit posts** `TBD`
+
+6. **delete posts** `TBD`
+
+### Comments `TBD`
 
 1. **add a comment**
 
@@ -84,27 +98,30 @@ src/public
 ### `users`
 
 1. `POST /users`
--- Creates a new user with random username and user id
+   -- Creates a new user with random username and user id
 
 2. `GET /users/{userid}`
--- Get a user with a given user id
+   -- Get a user with a given user id
 3. `GET /users/{username}`
--- Get a user with a given username
+   -- Get a user with a given username
 
 ### `Posts`
 
 1. `GET /posts`
--- Get all posts by everyone
+   -- Get all posts by everyone
 
-2. `POST /posts`
--- Create a new post.
-required fields in body are:
+2. `GET /posts/:postId`
+   -- Get post by its post id
+
+3. `POST /posts`
+   -- Create a new post.
+   required fields in body are:
+
 ```
 userId=
 title=
 body=
 ```
-
 
 ```shell
 git init

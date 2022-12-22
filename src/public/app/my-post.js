@@ -8,10 +8,12 @@ $(document).ready(async () => {
 		<div class="card-body">
 		<h5 class="card-title">${post.title}</h5>
 		<h6 class="card-subtitle mb-2 text-muted">${post.user.name}</h6>
-		<p class="card-text">
+		<p class="card-text" id="substrpost${post.id}">
 			${post.body.substring(0, 200)}
-			<a href="#" class="text-muted">...see more</a>
+			<a href="#" class="text-muted" data-component="${post.id}postId">...see more</a>
 		</p>
+		<!-- <p class="card-text" id="viewpost${post.id}" style="display: none;" >
+			${post.body}</p> -->
 		<a href="#" class="card-link">Like</a>
 		<a href="#" class="card-link">Comment</a>
 		<a href="#" class="card-link">Share</a>
@@ -21,6 +23,21 @@ $(document).ready(async () => {
 		`)
 		);
 	}
+
+	// show Whole Post
+	$('p a.text-muted').click((event) => {
+		let id = parseInt($(event.target).attr('data-component'));
+		const targetPost = posts.find((post) => post.id === id);
+		$('#content').load('../components/viewFullPost.html', () => {
+			$('div#fullPost.card-body').html(`
+			    <h3 class="card-title">${targetPost.title}</h3>
+			    <h6 class="card-subtitle mb-2 text-muted">${targetPost.user.name}</h6>
+			    <p class="card-text">
+			    	${targetPost.body}
+			    </p>
+			`);
+		});
+	});
 });
 async function getPosts() {
 	const currentUser = loginIfNeeded();
